@@ -1,4 +1,4 @@
-# 🎓 CampusOS — An Autonomous AI Workforce for Smarter Campus Operations
+# 🎓 CampusOS — An Autonomous AI Workforce for Smarter Campus Operations live at (https://campus-os-platform.vercel.app/login)
 
 > **CampusOS** is a full-stack autonomous multi-agent AI workforce platform that uses a LangGraph-inspired pipeline to orchestrate AI agents. These agents automatically classify, route, analyze, and resolve campus requests — with human-in-the-loop approval for sensitive actions.
 
