@@ -20,7 +20,11 @@ export default function Register() {
       await register(form)
       navigate('/login')
     } catch (err) {
-      setError(err.response?.data?.error?.message || 'Registration failed')
+      if (err.response) {
+        setError(err.response?.data?.error?.message || 'Registration failed')
+      } else {
+        setError('Unable to connect to server. Please try again later.')
+      }
     } finally {
       setLoading(false)
     }

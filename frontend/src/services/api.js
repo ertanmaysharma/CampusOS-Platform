@@ -14,6 +14,12 @@ api.interceptors.request.use(config => {
 api.interceptors.response.use(
   response => response,
   async error => {
+    // No response = network error (server down, CORS blocked, etc.)
+    if (!error.response) {
+      console.error('Network error:', error.message || 'Could not connect to server')
+      return Promise.reject(error)
+    }
+
     if (error.response?.status === 401) {
       const refreshToken = localStorage.getItem('refresh_token')
       if (refreshToken) {

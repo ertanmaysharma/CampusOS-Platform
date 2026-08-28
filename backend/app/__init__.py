@@ -20,12 +20,12 @@ def create_app(config_class=Config):
     migrate.init_app(app, db)
     jwt.init_app(app)
 
-    # CORS - parse comma-separated origins from env var
+    # CORS - parse comma-separated origins from env var, default to * for flexibility
     raw_origins = app.config.get("CORS_ORIGINS", "*")
     origins = [o.strip() for o in raw_origins.split(",") if o.strip()]
     CORS(
         app,
-        resources={r"/api/*": {"origins": origins}},
+        resources={r"/api/*": {"origins": origins, "allow_headers": ["*"]}},
         supports_credentials=True,
     )
 

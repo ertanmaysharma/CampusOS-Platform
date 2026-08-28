@@ -35,9 +35,9 @@ class Config:
     LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-3.5-turbo")
     LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "")
 
-    # CORS - comma-separated list of allowed origins
+    # CORS - comma-separated list of allowed origins (use * for all)
     CORS_ORIGINS = os.environ.get(
-        "CORS_ORIGINS", "http://localhost:5173,http://localhost:3000"
+        "CORS_ORIGINS", "*"
     )
 
     # Frontend URL (for reference / logging)

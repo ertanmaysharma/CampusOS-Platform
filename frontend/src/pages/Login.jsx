@@ -19,7 +19,11 @@ export default function Login() {
       await login(email, password)
       navigate('/dashboard')
     } catch (err) {
-      setError(err.response?.data?.error?.message || 'Invalid credentials')
+      if (err.response) {
+        setError(err.response?.data?.error?.message || 'Invalid credentials')
+      } else {
+        setError('Unable to connect to server. Please try again later.')
+      }
     } finally {
       setLoading(false)
     }

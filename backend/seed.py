@@ -165,7 +165,7 @@ def seed():
                 user_id=student.id,
                 action=action,
                 actor_type=actor,
-                metadata=meta,
+                meta_data=meta,
             )
             db.session.add(log)
         db.session.commit()
